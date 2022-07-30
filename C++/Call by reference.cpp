@@ -1,0 +1,36 @@
+#include<iostream.h>
+#include<conio.h>
+struct distance 
+{
+	int feet;
+	int inch;
+};
+void sum( distance d1, distance d2, distance *d3);
+int main()
+{
+	distance dist1,dist2,dist3;
+	cout<<"Enter First Distance\n";
+	cout<<"Enter no. of feets:";
+	cin>>dist1.feet;
+	cout<<"Enter no. of inches:";
+	cin>>dist1.inch;
+	cout<<"Enter Second Distance\n";
+	cout<<"Enter no. of feets:";
+	cin>>dist2.feet;
+	cout<<"Enter no. of inches:";
+	cin>>dist2.inch;
+	sum(dist1,dist2,&dist3);
+	cout<<"The total is:"<<dist3.feet<<" feets "<<dist3.inch<<" inches";
+	getch();
+	return 0;
+}
+void sum( distance d1, distance d2, distance *d3)
+{
+	d3->feet=d1.feet+d2.feet;
+	d3->inch=d1.inch+d2.inch;
+	if(d3->inch>=12)
+	{
+		d3->feet=d3->feet+d3->inch/12;
+		d3->inch=d3->inch%12;
+	}
+}

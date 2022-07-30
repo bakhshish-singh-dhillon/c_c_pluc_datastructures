@@ -1,0 +1,60 @@
+#include<iostream.h>
+#include<conio.h>
+int main()
+{
+	int num, input, ans,rem,temp;
+	cout<<"Enter the decimal number to be converted:  ";
+	cin>>num;
+	cout<<"1.Binary\n2.Octal\n3.Hexadecimal\nEnter the system in which the number is to be converted: ";
+	cin>>input;
+	switch(input)
+	{
+		case 1:
+		{
+			temp=num;
+			ans=0;
+			while(temp!=1)
+			{
+				rem=temp%2;
+				temp=temp/2;
+				ans=ans*10;
+				ans=ans+rem;
+			}
+			ans=ans+temp;
+			cout<<"The octal coversion for "<<num<<" is: "<<ans;
+			break;
+		}
+		case 2:
+		{
+			temp=num;
+			ans=0;
+			while(temp!=1)
+			{
+				rem=temp%8;
+				temp=temp/8;
+				ans=ans+rem;
+				ans=ans*10;
+			}
+			ans=ans+temp;
+			cout<<"The binary coversion for "<<num<<" is: "<<ans;
+			break;
+		}
+		case 3:
+		{
+			temp=num;
+			ans=0;
+			while(temp!=1)
+			{
+				rem=temp%16;
+				temp=temp/16;
+				ans=ans+rem;
+				ans=ans*10;
+			}
+			ans=ans+temp;
+			cout<<"The hexadecimal coversion for "<<num<<" is: "<<ans;
+			break;
+		}
+	}
+	getch();
+	return 0;
+}

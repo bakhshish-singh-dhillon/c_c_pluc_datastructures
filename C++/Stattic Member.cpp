@@ -1,0 +1,28 @@
+#include<iostream.h>
+#include<conio.h>
+class student
+{
+	char name[10];
+	static int count;
+	public:
+	void getdata()
+	{
+		cout<<"Enter Name: ";
+		cin>>name;
+		count++;
+	}
+	void showdata()
+	{
+		cout<<"You have entered the name "<<count<<" times"<<endl;
+	}
+};
+int student::count;
+int main()
+{
+	student s1,s2;
+	s1.getdata();
+	s2.getdata();
+	s1.showdata();
+	getch();
+	return 0;
+}
